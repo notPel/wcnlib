@@ -4,26 +4,18 @@ function getRandomColor() {
   return "#" + randomColor;
 }
 
-// Fires when button is clicked on brents page
+// Fires when button is clicked
 function randomBodyBackgroundColor() {
   const body = document.querySelector("body");
   body.style.backgroundColor = getRandomColor();
 }
 
-function loadBrentsPageCode() {
+function loadEventFunctions() {
   const button = document.querySelector("#that-button");
   button.addEventListener("click", randomBodyBackgroundColor);
   console.log("Function attached to button!");
 }
 
-// Once the window is loaded we will run some code.
-// Usually not necessary unless it is.
 window.onload = () => {
-  const windowTitle = document.querySelector("title").textContent;
-  console.log(`We are at ${windowTitle}`);
-
-  // Load JS function only if brents page is loaded.
-  if (windowTitle.includes("Brent")) {
-    loadBrentsPageCode();
-  }
+  loadEventFunctions();
 };
